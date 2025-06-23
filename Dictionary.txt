@@ -1,0 +1,19 @@
+word_dict = {}
+n = int(input("How many words do you want to add to the dictionary?"))
+for i in range(n):
+    word = input(f"Enter word {i+1}: ")
+    translation = input(f"Enter English translation for '{word}': ")
+    word_dict[word] = translation
+
+print("\n Dictionary creates successfully!")
+print(word_dict)
+
+while True:
+     search_word = input("\n Enter a word to look up its English translation (or type 'exit' to quit): ")
+     if search_word.lower() == 'exit':
+        print("Exiting dictionary lookup. Goodbye!")
+        break
+     elif search_word in word_dict:
+          print(f"English translation of '{search_word}' is '{word_dict[search_word]}'. ")
+     else:
+          print(f" '{search_word}' not found in dictionary.")
